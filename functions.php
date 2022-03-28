@@ -1,7 +1,7 @@
 <?php
 add_action( 'wp_enqueue_scripts', 'marianne_child_enqueue_styles' );
 
-function hamilton_child_enqueue_styles() {
+function marianne_child_enqueue_styles() {
  
     $parent_style = 'marianne-style';
  
