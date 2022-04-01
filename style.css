@@ -1,17 +1,277 @@
 /*
-* Theme Name:  Marianne by Djibril
-* Theme URI:   https://github.com/djimio/marianne-child
-* Description: This is a custom child theme I have created.
-* Author:      Djibril
-* Author URI:  https://djibril.sk/
-* Template:    marianne
-* Version:     0.1
+Theme Name: Marianne by Djibril
+Theme URI: https://github.com/djimio/marianne-child
+Author: Djibril
+Author URI: https://djibril.sk/
+Description: This is a child theme of the Marianne theme by Teddy.
+Tags: blog, one-column, two-columns, left-sidebar, custom-logo, custom-menu, featured-images, sticky-post, theme-options, threaded-comments, translation-ready, wide-blocks
+Version: 1.0
+Requires at least: 5.3
+Tested up to: 5.8.1
+Requires PHP: 5.2
+License: GNU General Public License v3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Template: marianne
 */
+
+/* Custom fonts */
+@font-face {
+    font-family: 'Brandon Text';
+    src: url('fonts/BrandonText-Bold.eot');
+    src: url('fonts/BrandonText-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/BrandonText-Bold.woff2') format('woff2'),
+        url('fonts/BrandonText-Bold.woff') format('woff'),
+        url('fonts/BrandonText-Bold.ttf') format('truetype'),
+        url('fonts/BrandonText-Bold.svg#BrandonText-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Brandon Text';
+    src: url('fonts/BrandonText-Medium.eot');
+    src: url('fonts/BrandonText-Medium.eot?#iefix') format('embedded-opentype'),
+        url('fonts/BrandonText-Medium.woff2') format('woff2'),
+        url('fonts/BrandonText-Medium.woff') format('woff'),
+        url('fonts/BrandonText-Medium.ttf') format('truetype'),
+        url('fonts/BrandonText-Medium.svg#BrandonText-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Brandon Text';
+    src: url('fonts/BrandonText-Light.eot');
+    src: url('fonts/BrandonText-Light.eot?#iefix') format('embedded-opentype'),
+        url('fonts/BrandonText-Light.woff2') format('woff2'),
+        url('fonts/BrandonText-Light.woff') format('woff'),
+        url('fonts/BrandonText-Light.ttf') format('truetype'),
+        url('fonts/BrandonText-Light.svg#BrandonText-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Brandon Text';
+    src: url('fonts/BrandonText-Thin.eot');
+    src: url('fonts/BrandonText-Thin.eot?#iefix') format('embedded-opentype'),
+        url('fonts/BrandonText-Thin.woff2') format('woff2'),
+        url('fonts/BrandonText-Thin.woff') format('woff'),
+        url('fonts/BrandonText-Thin.ttf') format('truetype'),
+        url('fonts/BrandonText-Thin.svg#BrandonText-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Brandon Text';
+    src: url('fonts/BrandonText-RegularItalic.eot');
+    src: url('fonts/BrandonText-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('fonts/BrandonText-RegularItalic.woff2') format('woff2'),
+        url('fonts/BrandonText-RegularItalic.woff') format('woff'),
+        url('fonts/BrandonText-RegularItalic.ttf') format('truetype'),
+        url('fonts/BrandonText-RegularItalic.svg#BrandonText-RegularItalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Brandon Text';
+    src: url('fonts/BrandonText-Black.eot');
+    src: url('fonts/BrandonText-Black.eot?#iefix') format('embedded-opentype'),
+        url('fonts/BrandonText-Black.woff2') format('woff2'),
+        url('fonts/BrandonText-Black.woff') format('woff'),
+        url('fonts/BrandonText-Black.ttf') format('truetype'),
+        url('fonts/BrandonText-Black.svg#BrandonText-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Brandon Text';
+    src: url('fonts/BrandonText-Regular.eot');
+    src: url('fonts/BrandonText-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/BrandonText-Regular.woff2') format('woff2'),
+        url('fonts/BrandonText-Regular.woff') format('woff'),
+        url('fonts/BrandonText-Regular.ttf') format('truetype'),
+        url('fonts/BrandonText-Regular.svg#BrandonText-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('/fonts/EBGaramond-Medium.woff2') format('woff2'),
+        url('/fonts/EBGaramond-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('/fonts/EBGaramond-Italic.woff2') format('woff2'),
+        url('/fonts/EBGaramond-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('/fonts/EBGaramond-Bold.woff2') format('woff2'),
+        url('/fonts/EBGaramond-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('/fonts/EBGaramond-BoldItalic.woff2') format('woff2'),
+        url('/fonts/EBGaramond-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('/fonts/EBGaramond-ExtraBoldItalic.woff2') format('woff2'),
+        url('/fonts/EBGaramond-ExtraBoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('/fonts/EBGaramond-ExtraBold.woff2') format('woff2'),
+        url('/fonts/EBGaramond-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('/fonts/EBGaramond-Regular.woff2') format('woff2'),
+        url('/fonts/EBGaramond-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('/fonts/EBGaramond-SemiBoldItalic.woff2') format('woff2'),
+        url('/fonts/EBGaramond-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('/fonts/EBGaramond-SemiBold.woff2') format('woff2'),
+        url('/fonts/EBGaramond-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('/fonts/EBGaramond-MediumItalic.woff2') format('woff2'),
+        url('/fonts/EBGaramond-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* Custom Elements */
+.custom-entry-meta {
+	display: flex;
+}
+
+.post-separator {
+	margin-bottom: 3em;
+	border-top: 1px solid #eee !important;
+}
+
+.brandon-title {
+    font-family: 'Brandon Text', sans-serif;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.5em;
+    margin: 0 0 13px;
+    word-spacing: .1em;
+}
+
+.brandon-text-light {
+    font-family: 'Brandon Text', sans-serif;
+    color: #888;
+    font-size: 1em;
+}
+
+.brandon-text-dark {
+    font-family: 'Brandon Text', sans-serif;
+    color: #222;
+    font-size: 1em;
+}
+
+.portfolio-title {
+    margin: 0 0 30px;;
+}
+
+.box-related {
+	background-color: #f5f5f5;
+    font-family: 'Brandon Text', sans-serif;
+    font-size: .85em;
+	padding: 20px 30px;
+    margin: 50px 0px !important;
+    border-left: solid 3px #0b6e99;
+    color: #37352f;
+}
+
+.box-note {
+	background-color: #d23c5014;
+    padding: 20px 30px;
+    margin: 50px 0px !important;
+    border-left: solid 3px #d23c50;
+    color: #37352f;
+    font-size: .85em;
+	font-family: 'Brandon Text', sans-serif;
+}
+
+.box-quote {
+	padding: 0 0 0 25px;
+    margin: 40px 0 !important;
+    font-size: 1.1em;
+    border-left: 3px solid #0b6e99;
+    color: #0b6e99;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.box-callout {
+	background: #f5f5f5;
+    font-family: 'Brandon Text', sans-serif;
+    font-size: .85em;
+    padding: 50px;
+    margin: 40px 0 !important;
+}
+
+.say-hello-title {
+	margin: 30px 0px;
+}
+
+.custom-divider {
+    border-top: 1px solid rgba(55, 53, 47, 0.09);
+    margin: 50px auto 0 auto;
+    width: 100%;
+	max-width: 740px;
+}
+
+.ol-callout {
+	margin-left: 30px !important;
+}
 
 /**
  * Variables
  */
-:root {
+ :root {
 	--color-light-blue: #0d6e99;
 	--color-dark-blue: #529ff5;
 
@@ -28,7 +288,7 @@
 	--color-dark-purple: #9a389a;
 
 	--color-border: #aaa;
-    --color-dark-border: #222;
+    --color-dark-border: #1b1b1b;
 
 	--color-light-background: #fff;
 	--color-dark-background: #000;
@@ -36,7 +296,7 @@
 	--color-light-text-primary: #222222;
 	--color-dark-text-primary: rgb(255, 255, 255, 0.85);
 
-	--color-light-text-secondary: rgb(0, 0, 0, 0.65);
+	--color-light-text-secondary: #999999;
 	--color-dark-text-secondary: rgb(255, 255, 255, 0.55);
 
 	--color-light-input-background: #eaeaea;
@@ -228,9 +488,15 @@ body {
 	-moz-osx-font-smoothing: var(--font-smooth-moz, auto);
 	 -webkit-font-smoothing: var(--font-smooth-webkit, auto);
 	            font-smooth: var(--font-smooth, auto);
+	font-family: 'Brandon Text', sans-serif;
 	margin: 0;
 	text-shadow: var(--text-shadow, unset);
 }
+
+p {
+	font-family: 'EB Garamond';
+}
+
 .site {
 	margin: 0 auto;
 	word-wrap: break-word;
@@ -270,10 +536,10 @@ section {
 }
 .has-drop-cap:not(:focus)::first-letter {
 	float: left;
-	font-size: 5em;
+	font-size: 3.5em;
 	font-style: normal;
-	font-weight: 700;
-	margin: 0 .1em 0 0;
+	font-weight: 400;
+	margin: 0 .1em .1em 0;
 	text-transform: uppercase;
 }
 .has-drop-cap:not(:focus)::after {
@@ -297,6 +563,10 @@ a:focus {
 	transition: all .2s ease-in-out;
 }
 
+p a {
+	color: (--color-light-blue) !important;
+}
+
 /* Titles */
 h1,
 h2,
@@ -306,29 +576,43 @@ h5,
 h6 {
 	margin: 1em 0;
 }
-h1 {
-	font-size: 1.5em;
-}
-h2 {
-	font-size: 1.25em;
-}
-h3 {
-	font-size: 1em;
-}
-h4 {
-	font-size: .93em;
-}
-h5{
-	font-size: .87em;
-}
-h6 {
-	font-size: .8em;
+h1 { 
+	font-size: 2.2em; 
+	font-weight: 600;
 }
 
+h2 { 
+	font-size: 1.6em; 
+	font-weight: 500;
+}
+
+h3 {
+	font-size: 1.4em; 
+	font-weight: 500;
+
+}
+
+h4 { 
+	font-size: 1.2em; 
+	font-weight: 500;
+}
+
+h5 { 
+	font-size: 1em;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+h6 {
+	font-size: 0.7em;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 0.025em;
+}
 /* Entry Content */
 strong,
 b {
-	font-weight: 700;
+	font-weight: 600;
 }
 em {
 	font-style: italic;
@@ -501,7 +785,7 @@ td {
 
 /* Separators */
 hr {
-	border-top: 1px solid var(--color-border);
+	border-top: 1px solid var(--color-dark-border) !important;
 	border-bottom: 0;
 	box-sizing: content-box; /* @source normalize.css */
 	display: block;
@@ -616,7 +900,7 @@ img {
 .wp-caption-text {
 	color: var(--color-body-text-secondary);
 	display: block;
-	font-size: .9em;
+	font-size: .8em;
 	margin: .5em 0 0;
 }
 .gallery-caption {
@@ -692,10 +976,7 @@ iframe {
 	padding: 0;
 }
 .navigation-menu .menu-item {
-	border-right: 1px solid var(--color-border);
-	display: inline-block;
-	margin-right: .5rem;
-	padding-right: .5rem;
+	border-right: none;
 }
 .navigation-menu .menu-item a {
 	display: inline-block;
@@ -728,11 +1009,13 @@ iframe {
 	border-radius: 50%;
 }
 .site-title {
+	font-family: 'Brandon Text', sans-serif;
 	font-size: 1.5em;
 	font-weight: var(--site-title-weight);
 	margin: 0;
 }
 .site-description {
+	font-family: 'Brandon Text', sans-serif;
 	font-size: 1em;
 	font-style: var(--site-desc-style);
 	font-weight: var(--site-desc-weight);
@@ -774,6 +1057,8 @@ iframe {
 }
 #menu-primary .sub-menu {
 	clip: rect(1px, 1px, 1px, 1px);
+	font-size: .9em;
+	line-height: .8;
 	clip-path: inset(50%);
 	display: block;
 	height: 1px;
@@ -785,13 +1070,15 @@ iframe {
 	word-wrap: normal !important;
 }
 #menu-primary .menu-item-has-children .sub-menu-toggle[aria-expanded="true"] ~ .sub-menu {
-	background-color: var(--color-input-background);
+	background-color: transparent;
+	font-size: .9em;
+	line-height: .8;
 	clip: auto !important;
 	clip-path: none;
 	display: block;
 	height: auto;
 	margin: 0;
-	padding: 0;
+	padding: .2em;
 	text-decoration: none;
 	top: 100%;
 	width: auto;
@@ -815,6 +1102,7 @@ iframe {
 #menu-primary .sub-menu > .menu-item > a {
 	display: block;
 	padding: .5em;
+	border: none;
 }
 #menu-primary .sub-menu .menu-item:last-child {
 	margin-bottom: 0;
@@ -856,6 +1144,7 @@ iframe {
 	}
 	#menu-mobile-button {
 		display: block;
+		border: none;
 	}
 	#menu-mobile-button:hover,
 	#menu-mobile-button:focus,
@@ -971,11 +1260,11 @@ iframe {
 	margin-bottom: 1em;
 }
 .loop-title {
-	font-size: 1.25em;
-	margin: .5em 0;
+	font-size: 1.5em !important;
+	margin-top: 0;
 }
 .loop-thumbnail {
-	margin: 1em auto;
+	margin: .5em auto;
 }
 .loop-content {
 	margin: 1em 0;
@@ -1187,16 +1476,15 @@ iframe {
 	font-size: .9em;
 }
 .comment-content {
-	border-left: 1px solid var(--color-border);
-	margin-top: .5em;
-	padding: 0 1em;
+	border: none;
+	/*border-left: 1px solid var(--color-border) !important;*/
 }
 .comment-content ul li,
 .comment-content ol li {
 	list-style: inherit;
 }
 .bypostauthor > .comment-body > .comment-content {
-	background-color: var(--color-input-background);
+	background-color: transparent !important;
 }
 .reply {
 	color: var(--color-body-text-secondary);
